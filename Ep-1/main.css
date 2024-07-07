@@ -1,0 +1,10 @@
+.container {
+    background: green;
+    color: #fff;
+    font-family: "Montserrat";
+    text-transform: capitalize;
+}
+
+.line2 {
+    color: black;
+}
