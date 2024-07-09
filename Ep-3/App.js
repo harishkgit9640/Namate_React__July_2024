@@ -1,14 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-
-const jsxElement = <h1>this is jsx Element</h1>;
-
-// Element examples
+// React Element examples
 const element = React.createElement("h2", { className: "element" }, "this is React Element");
 const element1 = (
     <h1>welcome to react Element-1 </h1>
 )
+
+// React Element using JSX
+// JSX - HTML like or XML like syntax
+// JSX - We can write HTML and JS 
+const jsxElement = <h1>this is jsx Element</h1>;
+
+
 
 // React Component example
 
