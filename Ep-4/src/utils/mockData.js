@@ -1,6 +1,6 @@
 import cardImg from '../assets/biriyani.webp'
 
-export const restData = [
+export default restData = [
     {
         name: "Biriyani",
         rest: "shantosh dhaba",
@@ -19,7 +19,7 @@ export const restData = [
         name: "Paneer",
         rest: "shantosh hotel",
         price: 249,
-        rating: 4.5,
+        rating: 3.1,
         imgUrl: cardImg
     },
     {
@@ -33,14 +33,14 @@ export const restData = [
         name: "Sahi Paneer",
         rest: "shantosh hotel",
         price: 199,
-        rating: 4.5,
+        rating: 3.5,
         imgUrl: cardImg
     },
     {
         name: "Chicken Curry",
         rest: "shantosh hotel",
         price: 299,
-        rating: 4.5,
+        rating: 2.5,
         imgUrl: cardImg
     },
 ]
