@@ -1,19 +1,18 @@
 import cardImg from '../assets/biriyani.webp'
 
-const Card = ({ restList }) => {
+const Card = ({ mealList }) => {
 
-    const { name, rest, price, rating, imgUrl } = restList;
+    const { idMeal, strArea, strCategory, strMeal, strMealThumb } = mealList;
 
 
     return (
         <div className="card">
             <div className="img">
-                <img src={imgUrl} alt="card-img" />
+                <img src={strMealThumb} alt="card-img" />
             </div>
-            <p>{name} </p>
-            <p>{rest}</p>
-            <p><b>Price : {price} </b></p>
-            <p><b>Rating : {rating}⭐ </b></p>
+            <p>{strMeal} </p>
+            <p><b>Location : {strArea} </b></p>
+            <p><b>Category : {strCategory} </b></p>
             <button> Order Now </button>
 
         </div>
