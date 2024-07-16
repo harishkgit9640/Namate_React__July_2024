@@ -4,6 +4,8 @@ import Card from "./Card"
 
 const Home = () => {
     const [data, setData] = useState([])
+    const [filterData, setFilterData] = useState([])
+    const [Search, setSearch] = useState("")
     // console.log(data);
     useEffect(() => {
         fetchApiData();
@@ -14,6 +16,7 @@ const Home = () => {
         const resData = await res.json();
         // console.log(resData?.data?.data);
         setData(resData?.data?.data)
+        setFilterData(resData?.data?.data)
     }
 
     if (data.length === 0) {
@@ -24,19 +27,19 @@ const Home = () => {
         <>
             <div className='main-container'>
                 <div className="search-menu">
-                    <input type="text" placeholder='Search Here...' />
+                    <input type="text" placeholder='Search indian' value={Search} onChange={(e) => setSearch(e.target.value)} />
                     <button onClick={(() => {
-                        filtered = data.filter((item) => item.strArea === "Indian")
-                        setData(filtered)
+                        filtered = data.filter((item) => item.strArea.toLowerCase().includes(Search.toLowerCase()))
+                        setFilterData(filtered)
                     })} >Search</button>
                     <button onClick={(() => {
                         filtered = data.filter((item) => item.strCategory === "Vegetarian")
-                        setData(filtered)
+                        setFilterData(filtered)
                     })} > Pure Veg </button>
                 </div>
                 <div className="menu-container">
                     {
-                        data.map(mealList => (
+                        filterData.map(mealList => (
                             <Card key={mealList.strMeal} mealList={mealList} />
                         ))
                     }

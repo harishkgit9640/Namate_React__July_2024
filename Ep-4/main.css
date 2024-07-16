@@ -35,6 +35,16 @@ nav ul {
     align-items: center;
 }
 
+ul button {
+    height: 30px;
+    width: 100px;
+    outline: none;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 5px;
+    color: #fff;
+}
+
 nav ul li {
     list-style: none;
     padding: 5px;

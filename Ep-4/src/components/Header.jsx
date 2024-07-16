@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import logo from '../assets/logo.webp'
 
 
 const Navbar = () => {
+    const [isLogIn, setIsLogIn] = useState("LogIn")
+
     return (
         <nav>
             <div className="brand-logo">
@@ -13,6 +16,9 @@ const Navbar = () => {
                 <li>Menu</li>
                 <li>Blog</li>
                 <li>Cart</li>
+                <button className='btn' onClick={() => {
+                    isLogIn === "LogIn" ? setIsLogIn("LogOut") : setIsLogIn("LogIn")
+                }} > {isLogIn} </button>
             </ul>
         </nav>
     )
