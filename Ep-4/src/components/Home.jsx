@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import restData from "../utils/mockData"
 import Card from "./Card"
 
 const Home = () => {
