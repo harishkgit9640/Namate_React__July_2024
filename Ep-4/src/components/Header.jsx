@@ -10,13 +10,11 @@ const Navbar = () => {
     return (
         <nav>
             <div className="brand-logo">
-                <img src={logo} alt="brand logo" />
+                <Link to='/'> <img src={logo} alt="brand logo" /> </Link>
             </div>
             <ul>
                 <li> <Link to="/" >Home </Link></li>
                 <li> <Link to="/about" >About</Link></li>
-                <li> <Link to="/menu" >Menu</Link></li>
-                <li> <Link to="/blog" >Blog</Link></li>
                 <li> <Link to="/contact" >Contact</Link></li>
                 <button button className='btn' onClick={() => {
                     isLogIn === "LogIn" ? setIsLogIn("LogOut") : setIsLogIn("LogIn")

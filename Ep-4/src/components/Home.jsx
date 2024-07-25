@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Card from "./Card"
+import { Link } from "react-router-dom"
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -13,7 +14,6 @@ const Home = () => {
     const fetchApiData = async () => {
         const res = await fetch("https://api.freeapi.app/api/v1/public/meals?page=1&limit=20");
         const resData = await res.json();
-        // console.log(resData?.data?.data);
         setData(resData?.data?.data)
         setFilterData(resData?.data?.data)
     }
@@ -27,19 +27,19 @@ const Home = () => {
             <div className='main-container'>
                 <div className="search-menu">
                     <input type="text" placeholder='Search indian' value={Search} onChange={(e) => setSearch(e.target.value)} />
-                    <button onClick={(() => {
+                    <button onClick={() => {
                         filtered = data.filter((item) => item.strArea.toLowerCase().includes(Search.toLowerCase()))
                         setFilterData(filtered)
-                    })} >Search</button>
-                    <button onClick={(() => {
+                    }} >Search</button>
+                    <button onClick={() => {
                         filtered = data.filter((item) => item.strCategory === "Vegetarian")
                         setFilterData(filtered)
-                    })} > Pure Veg </button>
+                    }} > Pure Veg </button>
                 </div>
                 <div className="menu-container">
                     {
                         filterData.map(mealList => (
-                            <Card key={mealList.strMeal} mealList={mealList} />
+                            <Link key={mealList.id} to={`menu/${mealList.id}`}>  <Card mealList={mealList} /> </Link>
                         ))
                     }
                 </div>
