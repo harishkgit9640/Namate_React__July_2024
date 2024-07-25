@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom"
+import { createBrowserRouter, Outlet } from "react-router-dom"
 import Footer from "./components/Footer"
 import Navbar from "./components/Header"
 import Home from "./components/Home"
@@ -10,7 +10,7 @@ const App = () => {
     return (
         <>
             <Navbar />
-            <Home />
+            <Outlet />
             <Footer />
         </>
     )
@@ -18,14 +18,23 @@ const App = () => {
 
 export const AppRouter = createBrowserRouter([
     {
-        path: "/", element: <Home />, errorElement: <Error />
+        path: "/", element: <App />,
+
+        children: [
+            {
+                path: "/", element: <Home />,
+            },
+            {
+                path: "/about", element: <About />,
+            },
+            {
+                path: "/contact", element: <Contact />,
+            }
+        ],
+
+        errorElement: <Error />
     },
-    {
-        path: "/about", element: <About />,
-    },
-    {
-        path: "/contact", element: <Contact />,
-    }
+
 ])
 
 

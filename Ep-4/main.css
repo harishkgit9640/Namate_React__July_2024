@@ -45,6 +45,11 @@ ul button {
     color: #fff;
 }
 
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
 nav ul li {
     list-style: none;
     padding: 5px;

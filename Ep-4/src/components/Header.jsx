@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import logo from '../assets/logo.webp'
+import { Link } from 'react-router-dom'
+
 
 
 const Navbar = () => {
@@ -11,12 +13,12 @@ const Navbar = () => {
                 <img src={logo} alt="brand logo" />
             </div>
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Menu</li>
-                <li>Blog</li>
-                <li>Cart</li>
-                <button className='btn' onClick={() => {
+                <li> <Link to="/" >Home </Link></li>
+                <li> <Link to="/about" >About</Link></li>
+                <li> <Link to="/menu" >Menu</Link></li>
+                <li> <Link to="/blog" >Blog</Link></li>
+                <li> <Link to="/contact" >Contact</Link></li>
+                <button button className='btn' onClick={() => {
                     isLogIn === "LogIn" ? setIsLogIn("LogOut") : setIsLogIn("LogIn")
                 }} > {isLogIn} </button>
             </ul>
