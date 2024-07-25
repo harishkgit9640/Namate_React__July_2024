@@ -11,7 +11,7 @@ const Home = () => {
     }, []);
 
     const fetchApiData = async () => {
-        const res = await fetch("https://api.freeapi.app/api/v1/public/meals?page=1&limit=100");
+        const res = await fetch("https://api.freeapi.app/api/v1/public/meals?page=1&limit=20");
         const resData = await res.json();
         // console.log(resData?.data?.data);
         setData(resData?.data?.data)

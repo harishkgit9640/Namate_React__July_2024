@@ -4,6 +4,7 @@ import Navbar from "./components/Header"
 import Home from "./components/Home"
 import Contact from "./components/Contact"
 import About from "./components/About"
+import Error from "./components/Error"
 
 const App = () => {
     return (
@@ -17,7 +18,7 @@ const App = () => {
 
 export const AppRouter = createBrowserRouter([
     {
-        path: "/", element: <Home />,
+        path: "/", element: <Home />, errorElement: <Error />
     },
     {
         path: "/about", element: <About />,
