@@ -1,8 +1,11 @@
 import React from 'react'
+import ClassCompo from './ClassCompo'
 
 const Contact = () => {
     return (
-        <h1>Contact</h1>
+        <>
+            <ClassCompo name="This is Contact Page" count2='10' />
+        </>
     )
 }
 
