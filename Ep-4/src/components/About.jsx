@@ -21,7 +21,7 @@ const About = () => {
             <h1> Designation : {data.bio} </h1>
             <h2> Location : {data.location}  </h2>
             <img src={data.avatar_url} alt="user-img" width={150} />
-            <ClassCompo name={data?.name} count2='05' />
+            {/* <ClassCompo name={data?.name} count2='05' /> */}
         </div>
     )
 }

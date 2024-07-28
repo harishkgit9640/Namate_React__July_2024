@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 class ClassCompo extends React.Component {
 
     constructor(props) {
@@ -10,6 +9,14 @@ class ClassCompo extends React.Component {
             count: 0,
         }
     }
+    componentDidMount() {
+        console.log("ClassCompo didMount");
+    }
+
+    componentDidUpdate() {
+
+    }
+
     render() {
 
         const { count } = this.state;
