@@ -14,16 +14,17 @@ class ClassCompo extends React.Component {
     }
 
     componentDidUpdate() {
+        console.log("ClassCompo didUpdate : " + this.state.count);
 
+    }
+    componentWillUnmount() {
+        console.log("ClassCompo didUnmount");
     }
 
     render() {
-
+        console.log("ClassCompo render");
         const { count } = this.state;
         const { count2, name } = this.props;
-
-        console.log("count: " + count);
-
         return (
             <>
                 <h1> this is {name} </h1>
