@@ -1,22 +1,13 @@
 import { useEffect, useState } from "react"
 import Card from "./Card"
 import { Link } from "react-router-dom"
+import useFetchApi from "../utils/useFetchApi"
 
 const Home = () => {
-    const [data, setData] = useState([])
-    const [filterData, setFilterData] = useState([])
+    const data = useFetchApi();
+    const [filterData, setFilterData] = useState(data)
     const [Search, setSearch] = useState("")
     // console.log(data);
-    useEffect(() => {
-        fetchApiData();
-    }, []);
-
-    const fetchApiData = async () => {
-        const res = await fetch("https://api.freeapi.app/api/v1/public/meals?page=1&limit=20");
-        const resData = await res.json();
-        setData(resData?.data?.data)
-        setFilterData(resData?.data?.data)
-    }
 
     if (data.length === 0) {
         return <h1>Loading ...</h1>
