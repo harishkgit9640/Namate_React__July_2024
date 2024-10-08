@@ -7,7 +7,7 @@ const Home = () => {
     const data = useFetchApi();
     const [filterData, setFilterData] = useState(data)
     const [Search, setSearch] = useState("")
-    // console.log(data);
+    console.log(filterData);
 
     if (data.length === 0) {
         return <h1>Loading ...</h1>
@@ -29,7 +29,8 @@ const Home = () => {
                 </div>
                 <div className="menu-container">
                     {
-                        filterData.map(mealList => (
+
+                        (filterData.length === 0 ? data : filterData).map(mealList => (
                             <Link key={mealList.id} to={`menu/${mealList.id}`}>  <Card mealList={mealList} /> </Link>
                         ))
                     }

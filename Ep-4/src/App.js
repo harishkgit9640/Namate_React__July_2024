@@ -6,6 +6,7 @@ import Contact from "./components/Contact"
 import About from "./components/About"
 import Error from "./components/Error"
 import Menu from "./components/Menu"
+import { FAQ } from "./components/FAQ"
 
 const App = () => {
     return (
@@ -30,6 +31,9 @@ export const AppRouter = createBrowserRouter([
             },
             {
                 path: "/menu/:id", element: <Menu />,
+            },
+            {
+                path: "/FAQ", element: <FAQ />,
             },
             {
                 path: "/contact", element: <Contact />,
