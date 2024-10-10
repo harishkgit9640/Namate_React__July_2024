@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react"
 import Card from "./Card"
-import { Link } from "react-router-dom"
 import useFetchApi from "../utils/useFetchApi"
 
 const Home = () => {
     const data = useFetchApi();
     const [filterData, setFilterData] = useState(data)
     const [Search, setSearch] = useState("")
-    console.log(filterData);
 
     if (data.length === 0) {
         return <h1>Loading ...</h1>
@@ -31,7 +29,7 @@ const Home = () => {
                     {
 
                         (filterData.length === 0 ? data : filterData).map(mealList => (
-                            <Link key={mealList.id} to={`menu/${mealList.id}`}>  <Card mealList={mealList} /> </Link>
+                            <div key={mealList.id}>  <Card mealList={mealList} /> </div>
                         ))
                     }
                 </div>

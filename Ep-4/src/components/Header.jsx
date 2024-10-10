@@ -1,14 +1,11 @@
-import { useContext, useState } from 'react'
 import logo from '../assets/logo.webp'
 import { Link } from 'react-router-dom'
-import userContext from '../utils/UserContext'
-
-
+import { useSelector } from 'react-redux'
 
 
 const Navbar = () => {
-    const [isLogIn, setIsLogIn] = useState("LogIn")
-    const { loggedInUser } = useContext(userContext)
+    // const [isLogIn, setIsLogIn] = useState("LogIn")
+    const cartItems = useSelector((store) => store.cart.items)
 
     return (
         <nav>
@@ -20,10 +17,10 @@ const Navbar = () => {
                 <li> <Link to="/about" >About</Link></li>
                 <li> <Link to="/FAQ" >FAQ</Link></li>
                 <li> <Link to="/contact" >Contact</Link></li>
-                <button button className='btn' onClick={() => {
+                {/* <button button className='btn' onClick={() => {
                     isLogIn === "LogIn" ? setIsLogIn("LogOut") : setIsLogIn("LogIn")
-                }} > {isLogIn} </button>
-                <li> {loggedInUser} </li>
+                }} > {isLogIn} </button> */}
+                <li> <Link to="/cart" >Cart - ({cartItems.length}) </Link></li>
             </ul>
         </nav>
     )
