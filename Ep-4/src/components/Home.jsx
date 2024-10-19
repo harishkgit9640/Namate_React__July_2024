@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Card from "./Card"
 import useFetchApi from "../utils/useFetchApi"
 
 const Home = () => {
     const data = useFetchApi();
+
     const [filterData, setFilterData] = useState(data)
     const [Search, setSearch] = useState("")
 
@@ -15,9 +16,9 @@ const Home = () => {
         <>
             <div className='main-container'>
                 <div className="search-menu">
-                    <input type="text" placeholder='Search indian' value={Search} onChange={(e) => setSearch(e.target.value)} />
+                    <input type="text" data-testid='searchInput' placeholder='Search' value={Search} onChange={(e) => setSearch(e.target.value)} />
                     <button onClick={() => {
-                        filtered = data.filter((item) => item.strArea.toLowerCase().includes(Search.toLowerCase()))
+                        filtered = data.filter((item) => item.strCategory.toLowerCase().includes(Search.toLowerCase()))
                         setFilterData(filtered)
                     }} >Search</button>
                     <button onClick={() => {
@@ -27,9 +28,8 @@ const Home = () => {
                 </div>
                 <div className="menu-container">
                     {
-
                         (filterData.length === 0 ? data : filterData).map(mealList => (
-                            <div key={mealList.id}>  <Card mealList={mealList} /> </div>
+                            <div key={mealList.id} data-testid='cardId'>  <Card mealList={mealList} /> </div>
                         ))
                     }
                 </div>
