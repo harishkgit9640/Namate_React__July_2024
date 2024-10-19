@@ -10,9 +10,9 @@ export const FAQ = () => {
                 FAQ_Questions.map((questions, index) => {
                     return (
                         <div key={index} >
-                            <div className="header" data-testid="arrowId" onClick={() => setShowFAQ(index)}>
+                            <div className="header" data-testid="downArrowId" onClick={() => setShowFAQ(index)}>
                                 <span className="title"> {questions.question} </span>
-                                <span className="down-arrow" > downArrowId </span>
+                                <span className="down-arrow"> 🔽 </span>
                             </div>
                             {(showFAQ === index ? true : false) && <div className="body" data-testid="faqId"> {questions.answer} </div>}
                         </div>

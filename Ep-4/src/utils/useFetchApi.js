@@ -7,7 +7,7 @@ const useFetchApi = function () {
     }, []);
 
     const fetchApiData = async () => {
-        const res = await fetch("https://api.freeapi.app/api/v1/public/meals?page=1&limit=10");
+        const res = await fetch("https://api.freeapi.app/api/v1/public/meals?page=1&limit=30");
         const resData = await res.json();
         setData(resData?.data?.data)
     }

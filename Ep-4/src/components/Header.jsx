@@ -1,4 +1,5 @@
 import logo from '../assets/logo.webp'
+import cart from '../assets/shopping-cart.png'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -14,13 +15,13 @@ const Navbar = () => {
             </div>
             <ul>
                 <li> <Link to="/" >Home </Link></li>
-                <li> <Link to="/about" >About</Link></li>
+                <li> <Link to="/all-dishes" >All Dishes</Link></li>
                 <li> <Link to="/FAQ" >FAQ</Link></li>
                 <li> <Link to="/contact" >Contact</Link></li>
                 {/* <button button className='btn' onClick={() => {
                     isLogIn === "LogIn" ? setIsLogIn("LogOut") : setIsLogIn("LogIn")
                 }} > {isLogIn} </button> */}
-                <li> <Link to="/cart" >Cart - ({cartItems.length}) </Link></li>
+                <li> <Link to="/cart" > <img src={cart} alt="cart-icon" className='cart_img' /> <span className='cart_count' > {cartItems.length}</span>  </Link></li>
             </ul>
         </nav>
     )

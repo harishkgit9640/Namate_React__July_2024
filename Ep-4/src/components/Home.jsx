@@ -21,10 +21,10 @@ const Home = () => {
                         filtered = data.filter((item) => item.strCategory.toLowerCase().includes(Search.toLowerCase()))
                         setFilterData(filtered)
                     }} >Search</button>
-                    <button onClick={() => {
+                    {/* <button onClick={() => {
                         filtered = data.filter((item) => item.strCategory === "Vegetarian")
                         setFilterData(filtered)
-                    }} > Pure Veg </button>
+                    }} > Pure Veg </button> */}
                 </div>
                 <div className="menu-container">
                     {

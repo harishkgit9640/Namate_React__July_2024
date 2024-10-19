@@ -12,6 +12,7 @@ import userContext from "./utils/UserContext"
 import { Provider } from "react-redux"
 import cardStore from "./utils/cartStore"
 import Cart from "./components/Cart"
+import AllDishes from "./components/AllDishes"
 
 const App = () => {
     const { loggedInUser } = useContext(userContext);
@@ -37,7 +38,7 @@ export const AppRouter = createBrowserRouter([
                 path: "/", element: <Home />,
             },
             {
-                path: "/about", element: <About />,
+                path: "/all-dishes", element: <AllDishes />,
             },
             {
                 path: "/menu/:id", element: <Menu />,
